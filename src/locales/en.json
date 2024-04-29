@@ -1,6 +1,10 @@
 {
-  "auth": {
-    "login": "Login",
-    "register": "Register"
+  "login": {
+    "username": "Username",
+    "password": "Password",
+    "signIn": "Sign in"
+  },
+  "dashboard": {
+    "title": "Dashboard"
   }
 }
