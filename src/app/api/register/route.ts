@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     //todo: implement password encrypting based on server setup
     const response = await axiosInstance.post(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/local/register`, data)
     return NextResponse.json(response.data, { status: 200 })
-  } catch (err) {
+  } catch (err: any) {
     return NextResponse.json(err?.response?.data, { status: 400 })
   }
 }

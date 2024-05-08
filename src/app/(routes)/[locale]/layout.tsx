@@ -1,14 +1,10 @@
+import React from "react"
 import type { Metadata } from "next"
-import { locales } from "../../../configs/i18n"
 import Providers from "../../providers"
 
 export const metadata: Metadata = {
   title: "Brandi",
   description: "Save time without sacrificing returns."
-}
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
 }
 
 interface RootLayoutProps {
