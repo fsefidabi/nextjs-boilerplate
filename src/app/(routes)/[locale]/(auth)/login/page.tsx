@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import { signIn } from "next-auth/react"
 import { useTranslations } from "next-intl"
 
-export default function LoginPage(props) {
+export default function LoginPage() {
   const [data, setData] = useState({
     username: "",
     password: ""
@@ -12,15 +12,15 @@ export default function LoginPage(props) {
 
   const t = useTranslations()
 
-  function handleInputChange(e) {
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     setData({
       ...data,
-      [e.target.id]: e.target.value
+      [event.target.id]: event.target.value
     })
   }
 
-  async function loginUser(e) {
-    e.preventDefault()
+  async function loginUser(event: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
     await signIn("credentials", {
       ...data,
       callbackUrl: "/"

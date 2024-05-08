@@ -1,7 +1,7 @@
 import { withAuth } from "next-auth/middleware"
 import { NextRequest } from "next/server"
 import withI18nMiddleware from "./i18n"
-import { locales } from "../configs/i18n"
+import { locales } from "@/lib/i18n"
 
 export default withAuth(
   // Note that this callback is only invoked if

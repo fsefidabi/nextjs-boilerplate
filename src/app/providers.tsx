@@ -1,8 +1,13 @@
 import React from "react"
 import { NextIntlClientProvider, useMessages } from "next-intl"
-import AuthProvider from "./context/AuthProvider"
+import AuthProvider from "@app/context/AuthProvider"
 
-export default function Providers({ locale, children }) {
+type ProvidersProps = {
+  locale: string;
+  children: React.ReactNode;
+}
+
+export default function Providers({ locale, children }: ProvidersProps) {
   const messages = useMessages()
 
   return (
